@@ -31,9 +31,8 @@
 
             <div class="side-panel">
                 <div class="load-section">
-                    <button onclick="document.getElementById('file-input').click()">LOAD KIT (JSON)</button>
-                    <input type="file" id="file-input" style="display:none" accept=".json"
-                        onchange="loadBank(this.files[0])">
+                    <button onclick="window.loadBank()">CHARGER UN KIT (JSON)</button>
+                    <input type="file" id="file-input" style="display:none" ...>
                 </div>
                 <div class="vu-section">
                     <div class="vu-meters-wrapper">
@@ -55,8 +54,12 @@
                 </div>
 
                 <div class="fx-section">
-                    <span class="label">EFFECTS</span>
-                    <div class="fx-placeholder">FX UNIT READY</div>
+                    <span class="label">EFFECTS EDIT</span>
+                    <div class="fx-controls-buttons">
+                        <button class="fx-btn active" onclick="switchFXFocus('filter')">FILTER</button>
+                        <button class="fx-btn" onclick="switchFXFocus('reverb')">REVERB</button>
+                    </div>
+                    <div class="fx-placeholder">NO KIT LOADED</div>
                 </div>
                 <div class="controls">
                     <button id="record-btn">REC</button>

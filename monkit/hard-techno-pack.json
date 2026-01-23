@@ -1,0 +1,22 @@
+{
+  "name": "Hrd Techno Pack",
+  "folder": "samples/",
+  "mapping": {
+    "C4": "kick1.wav",
+    "C#4": "kick2.wav",
+    "D4": "kick3.wav",
+    "D#4": "kick4.wav",
+    "E4": "kick5.wav",
+    "F4": "kick6.wav",
+    "F#4": "kick7.wav",
+    "G4": "kick8.wav",
+    "G#4": "snare1.wav",
+    "A4": "clap1.wav",
+    "A#4": "clap2.wav",
+    "B4": "closedhat1.wav",
+    "C5": "closedhat2.wav",
+    "C#5": "openhat1.wav",
+    "D5": "openhat2.wav",
+    "D#5": "openhat3.wav"
+  }
+}

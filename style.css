@@ -185,3 +185,78 @@ body {
 .led.yellow.on { background: #ffffff; box-shadow: 0 0 8px #ffffff; }
 .led.orange.on { background: #ff5c5c; box-shadow: 0 0 8px #ff5c5c; }
 .led.red.on    { background: #ff0000; box-shadow: 0 0 12px #ff0000; }
+
+.automation-section {
+    margin-top: 20px;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.automation-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.auto-label {
+    width: 80px;
+    font-size: 10px;
+    color: #888;
+}
+
+.auto-steps {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 4px;
+    flex-grow: 1;
+}
+
+.auto-step {
+    height: 20px;
+    background: #333;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.auto-step.active {
+    background: #00ffcc; /* Cyan pour le filtre */
+    box-shadow: 0 0 8px #00ffcc;
+}
+
+#reverb-automation .auto-step.active {
+    background: #ff00ff; /* Magenta pour la reverb */
+    box-shadow: 0 0 8px #ff00ff;
+}
+
+.fx-controls-buttons {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.fx-btn {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 10px;
+    flex: 1;
+}
+
+.fx-btn.active {
+    background: #444;
+    border-color: #00ffcc;
+    color: #00ffcc;
+}
+
+/* Cache les lignes d'automation par défaut */
+.automation-row {
+    display: none; 
+}
+
+/* Affiche seulement celle qui est active */
+.automation-row.visible {
+    display: flex;
+}
