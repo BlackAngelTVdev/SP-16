@@ -147,10 +147,7 @@ body {
     filter: brightness(1.2);
 }
 
-/* Effet de scanline sur le step actuel */
-.step[style*="opacity: 1"] {
-    border: 2px solid white;
-}
+
 /* --- LE VU-METRE --- */
 .vu-section {
     display: flex;
@@ -184,7 +181,7 @@ body {
 }
 
 /* Couleurs quand la classe .on est ajoutée par le JS */
-.led.green.on  { background: #00ff41; box-shadow: 0 0 8px #00ff41; }
-.led.yellow.on { background: #ffff00; box-shadow: 0 0 8px #ffff00; }
-.led.orange.on { background: #ffaa00; box-shadow: 0 0 8px #ffaa00; }
+.led.green.on  { background: #ffaa00; box-shadow: 0 0 8px #ffaa00; }
+.led.yellow.on { background: #ffffff; box-shadow: 0 0 8px #ffffff; }
+.led.orange.on { background: #ff5c5c; box-shadow: 0 0 8px #ff5c5c; }
 .led.red.on    { background: #ff0000; box-shadow: 0 0 12px #ff0000; }
