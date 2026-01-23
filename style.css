@@ -1,0 +1,190 @@
+:root {
+    --chassis-color: #1a1b1e;
+    --panel-dark: #0c0d0f;
+    --text-silver: #a0a0a0;
+    --pioneer-red: #e60012;
+    --pioneer-green: #00ff41;
+    --step-bg: #2d2f35;
+    --metal-gradient: linear-gradient(180deg, #32343b 0%, #1a1b1e 100%);
+}
+
+body {
+    background-color: #050505;
+    color: var(--text-silver);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Le boîtier principal avec texture métal brossé */
+.container {
+    background: var(--chassis-color);
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100% 2px; /* Effet lignes brossées */
+    padding: 30px;
+    border-radius: 4px;
+    border: 2px solid #000;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 980px;
+}
+
+/* Section du haut */
+.top-section {
+    display: flex;
+    gap: 40px;
+}
+
+/* Grille de Pads (L'aspect gommeux rétro-éclairé) */
+.sampler-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 85px);
+    grid-template-rows: repeat(4, 75px);
+    gap: 15px;
+    background: #000;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,1);
+}
+
+.pad {
+    background: #2a2c32;
+    border-radius: 4px;
+    border: 1px solid #111;
+    box-shadow: inset 0 2px 2px rgba(255,255,255,0.1);
+    cursor: pointer;
+    transition: all 0.05s;
+}
+
+/* Couleurs spécifiques comme sur la photo (par rangée) */
+.pad[data-pad="0"], .pad[data-pad="1"], .pad[data-pad="2"], .pad[data-pad="3"] { border-top: 3px solid #ff00ff; } /* Mauve */
+.pad[data-pad="4"], .pad[data-pad="5"], .pad[data-pad="6"], .pad[data-pad="7"] { border-top: 3px solid #00ffff; } /* Cyan */
+.pad[data-pad="8"], .pad[data-pad="9"], .pad[data-pad="10"], .pad[data-pad="11"] { border-top: 3px solid #ffff00; } /* Jaune */
+.pad[data-pad="12"], .pad[data-pad="13"], .pad[data-pad="14"], .pad[data-pad="15"] { border-top: 3px solid #ff4400; } /* Orange */
+
+.pad.active {
+    filter: brightness(1.8);
+    box-shadow: 0 0 25px currentColor; /* Utilise la couleur de bordure pour le halo */
+    transform: scale(0.96);
+}
+
+/* L'écran et les panels de droite */
+.side-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fx-section, .vu-section, .bpm-section {
+    background: var(--panel-dark);
+    border: 1px solid #000;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.label {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Boutons de transport (REC/PLAY) */
+.controls button {
+    background: var(--metal-gradient);
+    border: 1px solid #000;
+    color: white;
+    padding: 8px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#record-btn { color: var(--pioneer-red); }
+#play-btn { color: var(--pioneer-green); }
+
+/* Séquenceur (Les touches lumineuses en bas) */
+.sequencer-container {
+    background: #0a0a0a;
+    padding: 15px;
+    border-top: 3px solid #000;
+}
+
+.sequencer-steps {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.step {
+    flex: 1;
+    height: 45px;
+    max-width: 50px;
+    background: var(--step-bg);
+    border: 1px solid #111;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* Couleurs alternées du séquenceur (comme sur l'image) */
+.step:nth-child(-n+4) { background: #3d4a6d; } /* Bleu-gris */
+.step:nth-child(n+5):nth-child(-n+8) { background: #4d5d4d; } /* Vert-gris */
+.step:nth-child(n+9):nth-child(-n+12) { background: #6d5d4a; } /* Orange-gris */
+.step:nth-child(n+13) { background: #5d3d5d; } /* Violet-gris */
+
+.step.active {
+    background: #fff !important;
+    box-shadow: 0 0 15px #fff;
+    filter: brightness(1.2);
+}
+
+/* Effet de scanline sur le step actuel */
+.step[style*="opacity: 1"] {
+    border: 2px solid white;
+}
+/* --- LE VU-METRE --- */
+.vu-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #000; /* Fond noir profond comme l'écran */
+    border-radius: 4px;
+}
+
+.vu-meters-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 5px;
+}
+
+.led-stack {
+    display: flex;
+    flex-direction: row-reverse; /* Pour que la 1ère LED soit en bas */
+    gap: 3px;
+}
+
+.led {
+    width: 35px;
+    height: 6px;
+    background-color: #1a1a1a; /* Couleur quand c'est éteint (invisible presque) */
+    border-radius: 1px;
+    transition: background 0.05s, box-shadow 0.05s;
+}
+
+/* Couleurs quand la classe .on est ajoutée par le JS */
+.led.green.on  { background: #00ff41; box-shadow: 0 0 8px #00ff41; }
+.led.yellow.on { background: #ffff00; box-shadow: 0 0 8px #ffff00; }
+.led.orange.on { background: #ffaa00; box-shadow: 0 0 8px #ffaa00; }
+.led.red.on    { background: #ff0000; box-shadow: 0 0 12px #ff0000; }

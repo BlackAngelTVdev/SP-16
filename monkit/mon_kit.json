@@ -1,0 +1,9 @@
+{
+  "name": "Techno Kit",
+  "mapping": {
+
+    "C#4": "snare.wav",
+    "D4": "kick.wav",
+    "C4": "cri.mp3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sp-16",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "electron": "^40.0.0",
+    "tone": "^15.1.22"
+  }
+}

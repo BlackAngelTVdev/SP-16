@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pioneer DJ - SP-16</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-section">
+            <div class="sampler-grid">
+                <div class="pad" data-pad="0"></div>
+                <div class="pad" data-pad="1"></div>
+                <div class="pad" data-pad="2"></div>
+                <div class="pad" data-pad="3"></div>
+                <div class="pad" data-pad="4"></div>
+                <div class="pad" data-pad="5"></div>
+                <div class="pad" data-pad="6"></div>
+                <div class="pad" data-pad="7"></div>
+                <div class="pad" data-pad="8"></div>
+                <div class="pad" data-pad="9"></div>
+                <div class="pad" data-pad="10"></div>
+                <div class="pad" data-pad="11"></div>
+                <div class="pad" data-pad="12"></div>
+                <div class="pad" data-pad="13"></div>
+                <div class="pad" data-pad="14"></div>
+                <div class="pad" data-pad="15"></div>
+            </div>
+
+            <div class="side-panel">
+                <div class="load-section">
+                    <button onclick="document.getElementById('file-input').click()">LOAD KIT (JSON)</button>
+                    <input type="file" id="file-input" style="display:none" accept=".json"
+                        onchange="loadBank(this.files[0])">
+                </div>
+                <div class="vu-section">
+                    <div class="vu-meters-wrapper">
+                        <div class="led-stack" id="stack-left">
+                            <div class="led red"></div>
+                            <div class="led orange"></div>
+                            <div class="led yellow"></div>
+                            <div class="led green"></div>
+                            <div class="led green"></div>
+                        </div>
+                        <div class="led-stack" id="stack-right">
+                            <div class="led red"></div>
+                            <div class="led orange"></div>
+                            <div class="led yellow"></div>
+                            <div class="led green"></div>
+                            <div class="led green"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fx-section">
+                    <span class="label">EFFECTS</span>
+                    <div class="fx-placeholder">FX UNIT READY</div>
+                </div>
+                <div class="controls">
+                    <button id="record-btn">REC</button>
+                    <button id="play-btn">PLAY / STOP</button>
+                    <span id="bpm-display">120 BPM</span>
+                </div>
+                <div class="bpm-section">
+                    <span class="label">TEMPO</span>
+                    <div class="bpm-display"><span id="bpm-value">120</span> <small>BPM</small></div>
+                    <input type="range" id="bpm-slider" min="60" max="200" value="120" step="1">
+                </div>
+            </div>
+        </div>
+
+        <div class="sequencer-container">
+            <div class="sequencer-steps">
+                <div class="step" data-step="0"></div>
+                <div class="step" data-step="1"></div>
+                <div class="step" data-step="2"></div>
+                <div class="step" data-step="3"></div>
+                <div class="step" data-step="4"></div>
+                <div class="step" data-step="5"></div>
+                <div class="step" data-step="6"></div>
+                <div class="step" data-step="7"></div>
+                <div class="step" data-step="8"></div>
+                <div class="step" data-step="9"></div>
+                <div class="step" data-step="10"></div>
+                <div class="step" data-step="11"></div>
+                <div class="step" data-step="12"></div>
+                <div class="step" data-step="13"></div>
+                <div class="step" data-step="14"></div>
+                <div class="step" data-step="15"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
